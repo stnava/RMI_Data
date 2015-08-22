@@ -93,7 +93,7 @@ m2=scale( as.matrix(pbacTRimg) ); # m2=m2-min(m2)
 mysccan<-sparseDecom2(
   inmatrix=list(m1 , m2),
   inmask=c( NA , mask ),
-  smooth = 0, its=50,
+  smooth = 0.5, its=10,
   mycoption = 0, verbose=1,
   sparseness=c( -0.1, -0.05 ),
   nvecs=nv, perms=0, cthresh=c(0,250), ell1=1 )

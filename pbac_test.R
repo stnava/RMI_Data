@@ -96,11 +96,11 @@ mysccan<-sparseDecom2(
   smooth = 0, its=50,
   mycoption = 0, verbose=1,
   sparseness=c( -0.1, -0.05 ),
-  nvecs=nv, perms=0, cthresh=c(0,250), ell1=0.1 )
+  nvecs=nv, perms=0, cthresh=c(0,250), ell1=1 )
 
 sumcor=0
 for ( ind in 1:ncol(pbacTRcog) ) {
-  myform<-paste( mytests , collapse="+" )
+#  myform<-paste( mytests , collapse="+" )
   lowmat = pbacTRimg %*% mysccan$eig2
   traindf<-data.frame(  pbacTRimg %*% mysccan$eig2,
 #    cog = data.matrix(pbacTRcog) %*% as.numeric( mysccan$eig1[,ind] ) )
